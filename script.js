@@ -1,18 +1,18 @@
-const inputField1 = document.querySelector('#input-field-a');
-const inputField2 = document.querySelector('#input-field-b');
-const answerField = document.querySelector('#answer-field');
+const inputField = document.querySelector('#input-field');
 const button = document.querySelector('button');
+const answer = document.querySelector('#answer-field');
 
 button.addEventListener('click', () => {
-    const a = inputField1.value;
-    const b = inputField2.value;
-    if(isNaN(a) || isNaN(b))
-    {
-        answerField.textContent = ("Not a Number");
-    }
-    else{
-        
-        let c = Math.sqrt(a*a + b*b);
-        answerField.textContent = c;
-    }
+    const name = inputField.value;
+    console.log(name);
+    reverseName(name);
 });
+
+function reverseName(name)
+{
+    let rName ='';
+    for (let i = name.length -1; i >= 0; i--) {
+        rName += name[i];
+    }
+    answer.textContent = rName;
+}
